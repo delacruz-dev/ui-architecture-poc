@@ -14,6 +14,12 @@ export default class Alice extends Component {
       counter: this.state.counter + 1
     })
   }
+
+  componentDidUpdate (newProps, newState) {
+    console.log(newProps, newState)
+    this.props.onButtonClick(newState.counter)
+  }
+
   render () {
     return (
       <div>

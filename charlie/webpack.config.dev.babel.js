@@ -4,6 +4,8 @@ import HtmlWebpackPlugin from 'html-webpack-plugin'
 
 const SRC_PATH = join(__dirname, '/src')
 const APP_PATH = join(__dirname, '/demo')
+const ALICE = join(__dirname, '..', 'alice')
+const BOB = join(__dirname, '..', 'bob')
 
 export default {
   context: APP_PATH,
@@ -24,11 +26,11 @@ export default {
     loaders: [{
       test: /\.scss$/,
       loaders: ['style', 'css', 'sass'],
-      include: [APP_PATH, SRC_PATH]
+      include: [APP_PATH, SRC_PATH, ALICE, BOB]
     }, {
       test: /\.js$/,
       loaders: ['babel'],
-      include: [APP_PATH, SRC_PATH]
+      include: [APP_PATH, SRC_PATH, ALICE, BOB]
     }]
   },
   devtool: 'cheap-module-eval-source-map',
