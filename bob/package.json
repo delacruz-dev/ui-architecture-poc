@@ -1,5 +1,5 @@
 {
-  "name": "bob",
+  "name": "@typeform/bob",
   "version": "1.0.0",
   "description": "",
   "main": "lib",
@@ -22,6 +22,7 @@
     "test:watch": "NODE_ENV=test mocha --watch"
   },
   "devDependencies": {
+    "babel-cli": "^6.14.0",
     "babel-core": "^6.10.4",
     "babel-loader": "^6.2.4",
     "babel-preset-es2015": "^6.9.0",

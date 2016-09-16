@@ -1,5 +1,10 @@
 import React from 'react'
+import Alice from '@typeform/alice'
+import Bob from '@typeform/bob'
 
 export default () => (
-  <div>Charlie</div>
+  <div>
+    <Alice />
+    <Bob />
+  </div>
 )

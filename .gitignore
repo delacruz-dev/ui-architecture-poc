@@ -38,6 +38,7 @@ jspm_packages
 
 # Generated directories
 dist
+lib
 
 # System files
 .DS_Store

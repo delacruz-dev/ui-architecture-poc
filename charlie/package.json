@@ -1,8 +1,8 @@
 {
-  "name": "charlie",
+  "name": "@typeform/charlie",
   "version": "1.0.0",
   "description": "",
-  "main": "lib",
+  "main": "src",
   "scripts": {
     "phoenix": "rimraf node_modules && npm install",
     "start": "webpack-dev-server --config webpack.config.dev.babel.js",
@@ -46,6 +46,8 @@
     "webpack-dev-server": "^1.14.1"
   },
   "dependencies": {
+    "@typeform/alice": "1.0.0",
+    "@typeform/bob": "1.0.0",
     "bulma": "^0.1.2",
     "classnames": "^2.2.5",
     "react": "^15.3.1",

@@ -1,4 +1,4 @@
-import {join} from 'path'
+import {join, resolve} from 'path'
 import {HotModuleReplacementPlugin} from 'webpack'
 import HtmlWebpackPlugin from 'html-webpack-plugin'
 
@@ -15,7 +15,8 @@ export default {
   },
   resolve: {
     alias: {
-      'charlie': SRC_PATH
+      'charlie': SRC_PATH,
+      react: resolve('./node_modules/react')
     },
     extensions: ['', '.js', '.scss']
   },
