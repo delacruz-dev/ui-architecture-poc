@@ -1,10 +1,11 @@
 import React from 'react'
 
-const Alice = ({counter = 0, onButtonClick}) => (
+const Alice = ({counter = 0, onIncrement, onDecrement}) => (
   <div>
     <h1>Alice</h1>
     <h2>{counter}</h2>
-    <button onClick={onButtonClick}>Click me!</button>
+    <button onClick={onIncrement}>Increment!</button>
+    <button onClick={onDecrement}>Decrement!</button>
   </div>
 )
 
