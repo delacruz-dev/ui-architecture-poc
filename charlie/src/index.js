@@ -14,14 +14,14 @@ export default class Charlie extends Component {
 
   handleButtonClick (counter) {
     this.setState({
-      counter
+      counter: this.state.counter + 1
     })
   }
 
   render () {
     return (
       <div>
-        <Alice onButtonClick={this.handleButtonClick} />
+        <Alice counter={this.state.counter} onButtonClick={this.handleButtonClick} />
         <Bob counter={this.state.counter} />
       </div>
     )
