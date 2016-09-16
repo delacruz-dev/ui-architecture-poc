@@ -1,7 +1,7 @@
-import increment from './business-rules'
+import AliceDomain from './domain'
 import Alice from './ui'
 
 export {
-  Alice as default,
-  increment
+  Alice,
+  AliceDomain
 }

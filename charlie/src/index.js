@@ -1,5 +1,5 @@
 import React, {Component} from 'react'
-import Alice, {increment} from '@typeform/alice'
+import {Alice, AliceDomain} from '@typeform/alice'
 import Bob from '@typeform/bob'
 
 export default class Charlie extends Component {
@@ -14,7 +14,10 @@ export default class Charlie extends Component {
 
   handleButtonClick (counter) {
     this.setState({
-      counter: increment(this.state.counter)
+      counter: AliceDomain
+                .service('counter')
+                .useCase('increment')
+                .execute({counter: this.state.counter})
     })
   }
 
