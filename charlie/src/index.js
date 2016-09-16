@@ -13,12 +13,15 @@ export default class Charlie extends Component {
   }
 
   handleButtonClick (counter) {
-    this.setState({
-      counter: AliceDomain
-                .service('counter')
-                .useCase('increment')
-                .execute({counter: this.state.counter})
-    })
+    AliceDomain
+      .service('counter')
+      .useCase('increment')
+      .execute({counter: this.state.counter})
+      .then(counter => {
+        this.setState({
+          counter
+        })
+      })
   }
 
   render () {
