@@ -17,10 +17,8 @@ export default class Charlie extends Component {
       .service('counter')
       .useCase('initialize')
       .execute()
-      .then(counter => {
-        this.state = {
-          counter
-        }
+      .then(state => {
+        this.state = state
       })
   }
 
@@ -28,11 +26,9 @@ export default class Charlie extends Component {
     AliceDomain
       .service('counter')
       .useCase('increment')
-      .execute({counter: this.state.counter})
-      .then(counter => {
-        this.setState({
-          counter
-        })
+      .execute(this.state)
+      .then(state => {
+        this.setState(state)
       })
   }
 
@@ -40,19 +36,17 @@ export default class Charlie extends Component {
     AliceDomain
       .service('counter')
       .useCase('decrement')
-      .execute({counter: this.state.counter})
-      .then(counter => {
-        this.setState({
-          counter
-        })
+      .execute(this.state)
+      .then(state => {
+        this.setState(state)
       })
   }
 
   render () {
     return (
       <div>
-        <Alice counter={this.state.counter} onIncrement={this.handleIncrement} onDecrement={this.handleDecrement} />
-        <Bob counter={this.state.counter} />
+        <Alice {...this.state} onIncrement={this.handleIncrement} onDecrement={this.handleDecrement} />
+        <Bob {...this.state} />
       </div>
     )
   }
