@@ -1,8 +1,6 @@
 import React, {Component} from 'react'
-import Alice from '@typeform/alice'
+import Alice, {increment} from '@typeform/alice'
 import Bob from '@typeform/bob'
-
-const increment = (value) => value + 1
 
 export default class Charlie extends Component {
   constructor (...args) {
