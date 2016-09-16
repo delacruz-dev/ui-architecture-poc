@@ -8,8 +8,7 @@ export default class Charlie extends Component {
 
     this.state = {}
 
-    this.handleIncrement = this.handleIncrement.bind(this)
-    this.handleDecrement = this.handleDecrement.bind(this)
+    this.handleActionDispatched = this.handleActionDispatched.bind(this)
   }
 
   componentDidMount () {
@@ -22,20 +21,10 @@ export default class Charlie extends Component {
       })
   }
 
-  handleIncrement (counter) {
+  handleActionDispatched ({service, useCase}) {
     AliceDomain
-      .service('counter')
-      .useCase('increment')
-      .execute(this.state)
-      .then(state => {
-        this.setState(state)
-      })
-  }
-
-  handleDecrement (counter) {
-    AliceDomain
-      .service('counter')
-      .useCase('decrement')
+      .service(service)
+      .useCase(useCase)
       .execute(this.state)
       .then(state => {
         this.setState(state)
@@ -45,7 +34,7 @@ export default class Charlie extends Component {
   render () {
     return (
       <div>
-        <Alice {...this.state} onIncrement={this.handleIncrement} onDecrement={this.handleDecrement} />
+        <Alice {...this.state} onActionDispatched={this.handleActionDispatched} />
         <Bob {...this.state} />
       </div>
     )
