@@ -1,10 +1,29 @@
-import React from 'react'
+import React, { Component } from 'react'
 
-const InputField = () => (
-  <p>
-    <label>Input field:</label>
-    <input type='text' />
-  </p>
-)
+export default class InputField extends Component {
+  constructor (...args) {
+    super(...args)
 
-export default InputField
+    this.handleChange = this.handleChange.bind(this)
+
+    this.state = {
+      value: ''
+    }
+  }
+
+  handleChange () {
+    this.setState({
+      value: this.inputField.value
+    })
+  }
+
+  render () {
+    return (
+      <p>
+        <label>Input field:</label>
+        <input type='text' onChange={this.handleChange} ref={node => { this.inputField = node }} />
+        {this.state.value && <button>ok</button>}
+      </p>
+    )
+  }
+}
