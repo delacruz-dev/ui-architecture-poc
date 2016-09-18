@@ -9,6 +9,10 @@ class AliceDomain {
     this._useCases.set('counter::initialize', CounterFactory.initializeUseCase())
   }
 
+  initialize () {
+    return this.service('counter').useCase('initialize')
+  }
+
   service (serviceName) {
     return {
       useCase: (useCase) => {

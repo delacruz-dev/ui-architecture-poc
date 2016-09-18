@@ -13,8 +13,7 @@ export default class Charlie extends Component {
 
   componentDidMount () {
     AliceDomain
-      .service('counter')
-      .useCase('initialize')
+      .initialize()
       .execute()
       .then(state => {
         this.state = state
