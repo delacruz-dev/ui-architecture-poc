@@ -5,7 +5,7 @@ class AliceDomain {
     this._useCases = new Map()
 
     this._useCases.set('counter::increment', CounterFactory.incrementUseCase())
-    this._useCases.set('counter::decrement', CounterFactory.decrementUseCase())
+    this._useCases.set('counter::askForDecrement', CounterFactory.askForDecrementUseCase())
     this._useCases.set('counter::initialize', CounterFactory.initializeUseCase())
   }
 

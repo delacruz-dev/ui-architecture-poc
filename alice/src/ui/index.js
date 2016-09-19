@@ -2,7 +2,7 @@ import React from 'react'
 
 const Alice = ({counter = 0, onActionDispatched}) => {
   const handleIncrement = () => onActionDispatched({service: 'counter', useCase: 'increment'})
-  const handleDecrement = () => onActionDispatched({service: 'counter', useCase: 'decrement'})
+  const handleDecrement = () => onActionDispatched({service: 'counter', useCase: 'askForDecrement'})
 
   return (
     <div>

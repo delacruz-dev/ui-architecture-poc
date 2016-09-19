@@ -1,12 +1,9 @@
-import {join, resolve} from 'path'
+import {join} from 'path'
 import {HotModuleReplacementPlugin} from 'webpack'
 import HtmlWebpackPlugin from 'html-webpack-plugin'
 
 const SRC_PATH = join(__dirname, '/src')
 const APP_PATH = join(__dirname, '/demo')
-const ALICE = join(__dirname, '..', 'alice')
-const BOB = join(__dirname, '..', 'bob')
-const DENIS = join(__dirname, '..', 'denis')
 
 export default {
   context: APP_PATH,
@@ -18,8 +15,7 @@ export default {
   },
   resolve: {
     alias: {
-      'charlie': SRC_PATH,
-      react: resolve('./node_modules/react')
+      'denis': SRC_PATH
     },
     extensions: ['', '.js', '.scss']
   },
@@ -27,11 +23,11 @@ export default {
     loaders: [{
       test: /\.scss$/,
       loaders: ['style', 'css', 'sass'],
-      include: [APP_PATH, SRC_PATH, ALICE, BOB, DENIS]
+      include: [APP_PATH, SRC_PATH]
     }, {
       test: /\.js$/,
       loaders: ['babel'],
-      include: [APP_PATH, SRC_PATH, ALICE, BOB, DENIS]
+      include: [APP_PATH, SRC_PATH]
     }]
   },
   devtool: 'cheap-module-eval-source-map',

@@ -1,12 +1,16 @@
 import React, {Component} from 'react'
 import {Alice, AliceDomain} from '@typeform/alice'
 import Bob from '@typeform/bob'
+import Denis from '@typeform/denis'
 
 export default class Charlie extends Component {
   constructor (...args) {
     super(...args)
 
-    this.state = {}
+    this.state = {
+      counter: '',
+      dialog: ''
+    }
 
     this.handleActionDispatched = this.handleActionDispatched.bind(this)
   }
@@ -35,6 +39,7 @@ export default class Charlie extends Component {
       <div>
         <Alice {...this.state} onActionDispatched={this.handleActionDispatched} />
         <Bob {...this.state} />
+        <Denis {...this.state} />
       </div>
     )
   }

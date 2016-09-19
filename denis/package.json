@@ -1,5 +1,5 @@
 {
-  "name": "@typeform/charlie",
+  "name": "@typeform/denis",
   "version": "1.0.0",
   "description": "",
   "main": "src",
@@ -28,9 +28,6 @@
     "standard": "^7.1.2"
   },
   "dependencies": {
-    "@typeform/alice": "1.0.0",
-    "@typeform/bob": "1.0.0",
-    "@typeform/denis": "1.0.0",
     "classnames": "^2.2.5"
   },
   "peerDependencies": {
