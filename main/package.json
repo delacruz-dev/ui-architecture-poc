@@ -1,5 +1,5 @@
 {
-  "name": "@typeform/charlie",
+  "name": "@typeform/main",
   "version": "1.0.0",
   "description": "",
   "main": "src",
@@ -30,7 +30,11 @@
   "dependencies": {
     "@typeform/alice": "1.0.0",
     "@typeform/bob": "1.0.0",
-    "classnames": "^2.2.5"
+    "@typeform/buritto": "1.0.0",
+    "classnames": "^2.2.5",
+    "react-redux": "^4.4.5",
+    "react-router": "^2.8.1",
+    "redux": "^3.6.0"
   },
   "peerDependencies": {
     "react": "^15.3.1",

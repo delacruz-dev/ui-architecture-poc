@@ -1,15 +1,9 @@
 import React from 'react'
 
-const Alice = ({counter = 0, onActionDispatched}) => {
-  const handleIncrement = () => onActionDispatched({service: 'counter', useCase: 'increment'})
-  const handleDecrement = () => onActionDispatched({service: 'counter', useCase: 'decrement'})
-
+const Alice = () => {
   return (
     <div>
-      <h1>Alice</h1>
-      <h2>{counter}</h2>
-      <button onClick={handleIncrement}>Increment!</button>
-      <button onClick={handleDecrement}>Decrement!</button>
+      <h2>Alice</h2>
     </div>
   )
 }

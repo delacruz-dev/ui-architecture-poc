@@ -1,13 +1,12 @@
 import React from 'react'
-import { InputField } from './components'
+import { ShortText, MultipleChoice } from './components'
 
-const Alice = ({counter}) => (
+const Bob = () => (
   <div>
     <h1>Bob</h1>
-    {
-      Array.apply(null, {length: counter}).map((_, index) => <InputField key={index} />)
-    }
+    <ShortText />
+    <MultipleChoice />
   </div>
 )
 
-export default Alice
+export default Bob

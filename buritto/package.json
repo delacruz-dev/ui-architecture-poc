@@ -1,0 +1,53 @@
+{
+  "name": "@typeform/buritto",
+  "version": "1.0.0",
+  "description": "",
+  "main": "src",
+  "scripts": {
+    "clean": "rm -rf node_modules lib dist",
+    "phoenix": "rm -rf node_modules && npm install",
+    "start": "../node_modules/.bin/webpack-dev-server --config webpack.config.dev.babel.js",
+    "pregh-pages": "rm -rf ./examples/dist/*",
+    "gh-pages": "npm run gh-pages:build && npm run gh-pages:publish",
+    "gh-pages:build": "NODE_ENV=production ./node_modules/.bin/webpack --config webpack.config.gh-pages.babel.js",
+    "gh-pages:publish": "../node_modules/.bin/gh-pages -d examples",
+    "lib": "npm run lib:scss && npm run lib:js",
+    "lib:js": "../node_modules/.bin/babel src --out-dir lib",
+    "lib:scss": "../node_modules/.bin/copyfiles -u 1 './src/**/*.scss' lib",
+    "lib:js:watch": "npm run lib:js -- -w",
+    "build:umd": "npm run build && npm run build:prod",
+    "build": "NODE_ENV=production ../node_modules/.bin/webpack --config webpack.config.base.babel.js",
+    "build:prod": "NODE_ENV=production ../node_modules/.bin/webpack --config webpack.config.prod.babel.js",
+    "lint": "./node_modules/.bin/standard --verbose | ./node_modules/.bin/snazzy",
+    "test": "NODE_ENV=test ../node_modules/.bin/mocha",
+    "test:watch": "NODE_ENV=test ../node_modules/.bin/mocha --watch"
+  },
+  "devDependencies": {
+    "react-dom": "^15.3.1",
+    "react": "^15.3.1",
+    "standard": "^7.1.2"
+  },
+  "dependencies": {
+    "@typeform/bob": "1.0.0",
+    "classnames": "^2.2.5"
+  },
+  "peerDependencies": {
+    "react": "^15.3.1",
+    "react-dom": "^15.3.1"
+  },
+  "standard": {
+    "globals": [
+      "it",
+      "describe"
+    ]
+  },
+  "babel": {
+    "presets": [
+      "babel-preset-es2015",
+      "babel-preset-react"
+    ]
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
