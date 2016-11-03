@@ -6,10 +6,13 @@ export default class AskForDecrementUseCase {
   execute ({counter = 0}) {
     return new Promise(resolve => {
       resolve({
-        ...dialogs.askForUserAndPassword,
-        onConfirm: {
-          service: 'counter',
-          useCase: 'decrement'
+        counter,
+        askForConfirmation: {
+          ...dialogs.askForUserAndPassword,
+          onConfirm: {
+            service: 'counter',
+            useCase: 'decrement'
+          }
         }
       })
     })

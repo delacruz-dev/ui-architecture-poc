@@ -1,4 +1,6 @@
 import React from 'react'
 import Denis from 'denis'
 
-export default () => <Denis counter={3}/>
+const handleConfirm = (action) => console.log(action)
+
+export default () => <Denis onConfirm={handleConfirm} />

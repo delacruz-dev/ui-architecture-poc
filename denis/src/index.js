@@ -1,14 +1,13 @@
 import React from 'react'
 
-const Denis = ({askForConfirmation}) => {
+const Denis = ({onConfirm, onActionDispatched}) => {
+  const handleConfirm = () => onActionDispatched(onConfirm)
+
   return (
     <div>
-    {
-      askForConfirmation && <div>
-        <button onClick={handleConfirm}>yes</button>
-        <button>no</button>
-      </div>
-    }
+      <p><strong>Confirm?</strong></p>
+      <button onClick={handleConfirm}>yes</button>
+      <button>no</button>
     </div>
   )
 }

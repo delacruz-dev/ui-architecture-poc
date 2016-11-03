@@ -1,4 +1,4 @@
 import React from 'react'
 import Bob from 'bob'
 
-export default () => <Bob counter={3}/>
+export default () => <Bob counter={3} />
