@@ -1,4 +1,6 @@
 import React from 'react'
-import Alice from 'alice'
+import {Alice} from 'alice'
 
-export default () => <Alice />
+const handleActionDispatched = (action) => console.log(action)
+
+export default () => <Alice onActionDispatched={handleActionDispatched} />

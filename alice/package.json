@@ -28,6 +28,7 @@
     "standard": "^7.1.2"
   },
   "dependencies": {
+    "@typeform/dialogs": "1.0.0",
     "classnames": "^2.2.5"
   },
   "peerDependencies": {
@@ -43,7 +44,8 @@
   "babel": {
     "presets": [
       "babel-preset-es2015",
-      "babel-preset-react"
+      "babel-preset-react",
+      "babel-preset-stage-2"
     ]
   },
   "keywords": [],
