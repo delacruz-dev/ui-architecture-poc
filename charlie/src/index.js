@@ -8,8 +8,7 @@ export default class Charlie extends Component {
     super(...args)
 
     this.state = {
-      counter: '',
-      dialog: ''
+      showDialog: false
     }
 
     this.handleActionDispatched = this.handleActionDispatched.bind(this)
@@ -20,7 +19,10 @@ export default class Charlie extends Component {
       .initialize()
       .execute()
       .then(state => {
-        this.state = state
+        this.state = {
+          ...state,
+          showDialog: false
+        }
       })
   }
 
@@ -30,16 +32,20 @@ export default class Charlie extends Component {
       .useCase(useCase)
       .execute(this.state)
       .then(state => {
-        this.setState(state)
+        this.setState({
+          ...state,
+          showDialog: !!state.askForConfirmation
+        })
       })
   }
 
   render () {
+    console.log('charlie render state', this.state)
     return (
       <div>
         <Alice {...this.state} onActionDispatched={this.handleActionDispatched} />
         <Bob {...this.state} />
-        <Denis {...this.state} />
+        {this.state.showDialog && <Denis onConfirm={this.state.askForConfirmation.onConfirm} onActionDispatched={this.handleActionDispatched} />}
       </div>
     )
   }
