@@ -1,4 +1,5 @@
 import React from 'react'
+import {BlockTypes} from './components'
 
 const Alice = ({counter = 0, onActionDispatched}) => {
   const handleIncrement = () => onActionDispatched({service: 'counter', useCase: 'increment'})
@@ -10,6 +11,7 @@ const Alice = ({counter = 0, onActionDispatched}) => {
       <h2>{counter}</h2>
       <button onClick={handleIncrement}>Increment!</button>
       <button onClick={handleDecrement}>Decrement!</button>
+      <BlockTypes />
     </div>
   )
 }
