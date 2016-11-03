@@ -45,7 +45,7 @@ export default class Charlie extends Component {
       <div>
         <Alice {...this.state} onActionDispatched={this.handleActionDispatched} />
         <Bob {...this.state} />
-        {this.state.showDialog && <Denis onConfirm={this.state.askForConfirmation.onConfirm} onActionDispatched={this.handleActionDispatched} />}
+        {this.state.showDialog && <Denis {...this.state.askForConfirmation} onActionDispatched={this.handleActionDispatched} />}
       </div>
     )
   }

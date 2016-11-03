@@ -1,8 +1,5 @@
 const dialogs = {
-  askForUserAndPassword: {
-    username: 'email',
-    password: 'password'
-  }
+  askForUsername: Symbol('Ask for username')
 }
 
 module.exports = dialogs

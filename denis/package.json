@@ -28,6 +28,7 @@
     "standard": "^7.1.2"
   },
   "dependencies": {
+    "@typeform/dialogs": "1.0.0",
     "classnames": "^2.2.5"
   },
   "peerDependencies": {
