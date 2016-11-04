@@ -1,24 +1,20 @@
+import BlockFactory from '../factories/block'
+
+const dataComingFromSomewhere = [{
+  type: 1,
+  name: 'Short Text',
+  maxLength: true
+}, {
+  type: 2,
+  name: 'Long text',
+  maxLength: true,
+  requierd: true
+}]
+
 export default class ApiBlockRepository {
   getBlockTypes () {
     return Promise.resolve({
-      blockTypes: [{
-        type: 'SHORT_TEXT',
-        name: 'Short Text',
-        settings: [{
-          name: 'Max Length',
-          type: 'number'
-        }, {
-          name: 'Required',
-          type: 'boolean'
-        }]
-      }, {
-        type: 'LONG_TEXT',
-        name: 'Long Text',
-        settings: [{
-          name: 'Max Length',
-          type: 'number'
-        }]
-      }]
+      blockTypes: dataComingFromSomewhere.map(data => BlockFactory.blockValueObject(data))
     })
   }
 }
