@@ -1,4 +1,5 @@
 import CounterFactory from './factories/counter'
+import BlockFactory from './factories/block'
 
 class AliceDomain {
   constructor () {
@@ -8,6 +9,8 @@ class AliceDomain {
     this._useCases.set('counter::askForDecrement', CounterFactory.askForDecrementUseCase())
     this._useCases.set('counter::decrement', CounterFactory.decrementUseCase())
     this._useCases.set('counter::initialize', CounterFactory.initializeUseCase())
+
+    this._useCases.set('block::getBlockTypes', BlockFactory.getBlockTypesUseCase())
   }
 
   initialize () {

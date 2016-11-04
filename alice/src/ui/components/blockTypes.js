@@ -1,10 +1,17 @@
 import React from 'react'
 
-const BlockTypes = () => (
-  <ul>
-    <li><button>Add Short Text</button></li>
-    <li><button>Add Long Text</button></li>
-  </ul>
-)
+const BlockTypes = ({blockTypes, onActionDispatched}) => {
+  return (
+    <ul>
+    {
+      blockTypes.map((blockType, index) => {
+        return (
+          <li key={index}><button onClick={() => onActionDispatched(blockType)}>{blockType.name}</button></li>
+        )
+      })
+    }
+    </ul>
+  )
+}
 
 export default BlockTypes
